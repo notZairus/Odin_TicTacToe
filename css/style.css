@@ -1,0 +1,81 @@
+:root {
+  font-size: 16px;
+}
+
+body {
+  height: 100dvh;
+  margin: 0px;
+  background-color: #08FF08;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+body h1 {
+  font-size: 5rem;
+}
+
+#during-game {
+  display: none;
+}
+
+#during-game .btn-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+#during-game .btn-container button {
+  width: 150px;
+  height: 150px;
+  border: 1px solid black;
+  background-color: #08FF08;
+  color: black;
+  font-size: 5rem;
+}
+
+#during-game .btn-container button:nth-child(2) {
+  border-top: none;
+  border-left: none;
+}
+
+#during-game .btn-container button:nth-child(3) {
+  border-top: none;
+}
+
+#during-game .btn-container button:nth-child(4) {
+  border-top: none;
+  border-right: none;
+}
+
+#during-game .btn-container button:nth-child(5) {
+  border-left: none;
+}
+
+#during-game .btn-container button:nth-child(7) {
+  border-right: none;
+}
+
+#during-game .btn-container button:nth-child(8) {
+  border-bottom: none;
+  border-left: none;
+}
+
+#during-game .btn-container button:nth-child(9) {
+  border-bottom: none;
+}
+
+#during-game .btn-container button:nth-child(10) {
+  border-bottom: none;
+  border-right: none;
+}
+
+#before-game h2{
+  text-align: center;
+}
+
+.modeBtnContainer button {
+  background: #08FF08;
+  font-size: 2rem;
+  padding: 10px;
+}

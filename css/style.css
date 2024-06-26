@@ -5,7 +5,7 @@
 body {
   height: 100dvh;
   margin: 0px;
-  background-color: #08FF08;
+  background-color: #dae90b;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,7 +29,7 @@ body h1 {
   width: 150px;
   height: 150px;
   border: 1px solid black;
-  background-color: #08FF08;
+  background-color: transparent;
   color: black;
   font-size: 5rem;
 }
@@ -75,7 +75,7 @@ body h1 {
 }
 
 .modeBtnContainer button {
-  background: #08FF08;
+  background: transparent;
   font-size: 2rem;
   padding: 10px;
 }

@@ -1,3 +1,4 @@
+//PLAYER CONSTRUCTOR
 function Player(name) {
   let moves = [];
 
@@ -5,21 +6,41 @@ function Player(name) {
     return moves;
   }
 
-  return {name, getMoves};
+  function addMove(move) {
+    moves.push(move);
+  }
+
+  return {name, getMoves, addMove};
 }
 
+//GAMEBOARD 
+//THE ONE WHO REFRESH AND ASSIGN MOVES ON THE BOARD 
 let GameBoard = (function () {
   let gameBoard = document.getElementById('gameboard');
- 
+  
+  function get() {
+    return gameBoard;
+  }
+
+  //REFRESH THE GAMEBOARD
   function refresh() {
     for(let i = 0; i < gameBoard.children.length; i++) {
       gameBoard.children[i].textContent = '';
     }
   }
 
-  return {refresh};
+  //ASSIGN THE PLAYER MOVE ON THE GAME BOARD
+  function assign(index, player) {
+    gameBoard.children[index].textContent = player == 'player1' ? 'X' : 'O';
+  }
+
+  //TAENA EWAN KO NALANG KUNG DI PA DESCRIPTIVE YUNG MGA NAME NYAN
+
+  return {get, refresh, assign};
 })();
 
+//GAMEOPERATOR 
+//THE ONE WHO MONITOR THE SCORE AND THE MODALS
 let GameOperator = (function () {
   let winningCombinations = [
     [1, 2, 3],
@@ -47,10 +68,12 @@ let GameOperator = (function () {
 }) ();
 
 
+
 //SECTIONS
 let beforeGameSection = document.getElementById('before-game');
 let duringGameSection = document.getElementById('during-game');
 
+//BEFORE GAMEEEEE
 let modeContainer = document.querySelector('.modeBtnContainer');
 
 modeContainer.addEventListener('click', (event) => {
@@ -66,4 +89,14 @@ modeContainer.addEventListener('click', (event) => {
     beforeGameSection.style.display = 'none';
     duringGameSection.style.display = 'block';
   }
+})
+
+
+//DURING GAMEEEEEE
+let gameBoardBtns = GameBoard.get().children;
+
+Array.from(gameBoardBtns).forEach((button, index) => {
+  button.addEventListener('click', (event) => {
+    GameBoard.assign(index, player);
+  })
 })
